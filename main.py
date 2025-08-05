@@ -10,7 +10,7 @@ import torch
 WINDOW_SIZE = 16
 BATCH_SIZE = 128
 TRAIN_SPLIT = 0.8
-EPOCHS = 5
+EPOCHS = 25
 
 # Checking if its using the GPU version of torch instead of CPU, only for my PC, only laptop itll use the CPU one though. 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -20,11 +20,11 @@ if torch.cuda.is_available():
 
 # Creating data sets/splitting data
 print("Loading and splitting data")
-train_dataset = StockDataset("data.csv", window_size=WINDOW_SIZE, train_split=TRAIN_SPLIT, mode='train')
+train_dataset = StockDataset("data1.csv", window_size=WINDOW_SIZE, train_split=TRAIN_SPLIT, mode='train')
 train_dataloader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
 # The test dataset uses the same scalers calculated from the training set
-test_dataset = StockDataset("data.csv", window_size=WINDOW_SIZE, train_split=TRAIN_SPLIT, mode='test')
+test_dataset = StockDataset("data1.csv", window_size=WINDOW_SIZE, train_split=TRAIN_SPLIT, mode='test')
 test_dataloader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
 # Initialising the model
