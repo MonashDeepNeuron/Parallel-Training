@@ -43,7 +43,7 @@ def plot_results(csv_path='predictions.csv'):
         max_val = max(ticker_df['Actual'].max(), ticker_df['Predicted'].max())
         ax.plot([min_val, max_val], [min_val, max_val], 'k--', linewidth=2, label='Perfect Prediction (y=x)')
 
-        ax.set_title(f'Predicted vs. Actual Stock Prices for {ticker}', fontsize=16)
+        ax.set_title(f'Predicted vs. Actual Values for {ticker}', fontsize=16)
         ax.set_xlabel('Actual Values', fontsize=12)
         ax.set_ylabel('Predicted Values', fontsize=12)
         ax.legend()

@@ -64,7 +64,7 @@ def evaluate_and_export(model, dataloader, scalers, device, output_csv_path='pre
         header_lines.append(f"# Company: {ticker}")
         header_lines.append(f"#   - Mean Squared Error (MSE): {mse:.4f}")
         header_lines.append(f"#   - R-squared: {r2:.4f}")
-        header_lines.append(f"#   - Mean Absolute Error (MAE): ${mae:.4f}")
+        header_lines.append(f"#   - Mean Absolute Error (MAE): {mae:.4f}")
         header_lines.append(f"#   - Mean Absolute Percentage Error (MAPE): {mape:.2f}%")
 
     # Then show raw predictions
